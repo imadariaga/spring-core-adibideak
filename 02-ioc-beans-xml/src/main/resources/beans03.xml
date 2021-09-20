@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+ 	<bean id="1" class="eus.uni.dam.Pertsona" scope="singleton"><!-- edo scope atributo barik -->
+		<property name="izena" value="Jorgito"></property>
+		<constructor-arg value="Jaimito"></constructor-arg>	
+		
+	</bean>
+	
+		<!--	<bean id="2" class="com.openwebinars.spring.Saludator">
+		<constructor-arg value="Kaixo"></constructor-arg>	
+	<constructor-arg value="3"></constructor-arg>	
+	</bean>-->
+	
+</beans>

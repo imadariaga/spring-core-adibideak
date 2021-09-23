@@ -9,9 +9,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 @SpringBootApplication
 public class IocBeansApplication4 {
 
-	public static void main(String[] args) {
-//Jaimito, Jorgito, Juanito (alfabetikoki) 
-		
+	public static void main(String[] args) {		
 		
 		//Kontestua hasieratu
 		ApplicationContext appContext = new ClassPathXmlApplicationContext("beans04.xml");

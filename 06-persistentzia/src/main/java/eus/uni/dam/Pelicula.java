@@ -17,6 +17,7 @@ public class Pelicula {
 	public Pelicula() {	}
 	
 	public Pelicula(long id,String titulo, String anyo, List<String> generos) {
+		this.id = id;
 		this.titulo = titulo;
 		this.anyo = anyo;
 		this.generos = generos;

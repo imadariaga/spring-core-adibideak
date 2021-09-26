@@ -18,7 +18,7 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class PeliculaDaoTextFile  implements PeliculaDao{
+public class PeliculaDaoTextFile implements PeliculaDao {
 
 	String filename = "Peliak.csv";
 	public List<Pelicula> peliculas = new ArrayList<>();
@@ -77,12 +77,33 @@ public class PeliculaDaoTextFile  implements PeliculaDao{
 	};
 
 	/**
-	 * Katalogoa berriz behar ez dugunean, memorian daukagun zerrenda 
-	 * testu fitxategi baten egingo dugu persistente.
+	 * Katalogoa berriz behar ez dugunean, memorian daukagun zerrenda testu
+	 * fitxategi baten egingo dugu persistente.
 	 * 
 	 */
 	@PreDestroy
 	public void destroy() {
-        //TO-DO
+		String filename = "FileOuta.csv";
+		PrintWriter outputStream = null;
+
+		try {
+			ClassPathResource fileResource = new ClassPathResource(filename);
+			outputStream = new PrintWriter(new FileWriter(fileResource.getFile()));
+
+			String l;
+			for (Pelicula p : peliculas) {
+				outputStream.println(p.getId() + "," + p.getTitulo() + "," + p.getAnyo());
+			}
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+
+			if (outputStream != null) {
+				outputStream.close();
+				System.out.println("Datuak gorde dira " + filename +" fitxategian.");
+			}
+		}
 	}
 }

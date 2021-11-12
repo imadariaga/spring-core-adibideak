@@ -14,9 +14,10 @@ public class IocBeansApplication3 {
 		
 		
 		//Kontestua hasieratu
-		ApplicationContext appContext = new ClassPathXmlApplicationContext("beans03.xml");
-
-		//Scope-a Singleton bada, lehenetsitakoa, objetu bakarra sortuko da 
+		ApplicationContext appContext = 
+				new ClassPathXmlApplicationContext("beans03.xml");// Singleton Scopea daukaten bean-ak orain sortuko dira, 
+		// beraz, => Hasieran metodoa exekutatzen dabil.
+		
 		Pertsona p1=null;
 		Pertsona p2 = null;
 
@@ -29,11 +30,11 @@ public class IocBeansApplication3 {
 		
 		p2.setIzena("Juanito");
 		System.out.println("Aldaketaren ostean");
-		p1.aurkeztu();
-		p2.aurkeztu();
+		p1.aurkeztu(); //=>Kaixo, ni Jorgito naiz. Urte askotarako.
+		p2.aurkeztu(); //=>Kaixo, ni Jorgito naiz. Urte askotarako.
 		
 		//Testuingurua itxi
-		((ClassPathXmlApplicationContext) appContext).close();
+		((ClassPathXmlApplicationContext) appContext).close();// => Bukaeran metodoa exekutatzen dabil.
 	}
 
 }

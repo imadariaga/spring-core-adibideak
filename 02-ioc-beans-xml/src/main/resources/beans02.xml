@@ -10,8 +10,10 @@
         <!-- SetterInjection --> 
 		<property name="izena" value="Jorgito"></property>
 
-		<!-- Posible da modu bietara ematea balioa atributuei, baina property elementua exekutatuko da azken beraz, Jorgito, geratuko litzateke, nahiz eta lehenago jarri
-		Constructor-based or setter-based DI?
+		<!-- Posible da modu bietara ematea balioa atributuei, baina property 
+		elementua exekutatuko da azken beraz, Jorgito, geratuko litzateke, 
+		nahiz eta lehenago jarri
+Constructor-based or setter-based DI?
 Since you can mix constructor-based and setter-based DI, it is a good rule of thumb to use
 constructors for mandatory dependencies and setter methods or configuration methods for
 optional dependencies. Note that use of the @Required annotation on a setter method can be

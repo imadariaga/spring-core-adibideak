@@ -1,13 +1,15 @@
-package eus.uni.dam;
+package eus.uni.dam.two;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
 import org.springframework.stereotype.Repository;
 
+@Repository
 public class CatalogoPeliculas {
 
 	public List<Pelicula> peliculas = new ArrayList<>();
@@ -18,13 +20,23 @@ public class CatalogoPeliculas {
 	
 
 	@PostConstruct
-	public void init() {
+	public void sortzerakoan() { //bean-a sortzerakoan
+		System.out.print("Sei pelikula sortuko dira ointxe bertan.");
+		
 		peliculas.add(new Pelicula("Vengadores: Infinity War", "2018","Ciencia ficción"));
 		peliculas.add(new Pelicula("Black Panther","2018","Ciencia ficción"));
 		peliculas.add(new Pelicula("Han Solo", "2018", "Acción"));
 		peliculas.add(new Pelicula("Ocean's 8", "2018", "Acción"));
 		peliculas.add(new Pelicula("Tom Raider", "2018", "Aventuras"));
 		peliculas.add(new Pelicula("Campeones","2018","Comedia"));
+	
 	}
+	@PreDestroy
+	public void  amaieran() { //bean-a eusezterakoan
+		for (Pelicula p: peliculas) {
+			System.out.println(p);
+		}
+	}
+	
 
 }

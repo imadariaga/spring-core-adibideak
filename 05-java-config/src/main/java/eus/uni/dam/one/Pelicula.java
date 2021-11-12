@@ -1,4 +1,4 @@
-package eus.uni.dam;
+package eus.uni.dam.one;
 
 import org.springframework.stereotype.Component;
 

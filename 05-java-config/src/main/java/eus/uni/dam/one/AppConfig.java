@@ -1,4 +1,4 @@
-package eus.uni.dam;
+package eus.uni.dam.one;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -14,5 +14,9 @@ public class AppConfig {
 		return new Pelicula();
 	}
 	
+	@Bean
+	public CatalogoPeliculas getCatalogo() {
+		return new CatalogoPeliculas();
+	}
 	
 }
